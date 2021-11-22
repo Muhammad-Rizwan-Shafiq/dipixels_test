@@ -70,6 +70,16 @@ class _SignupState extends State<Signup> {
           ));
         }
       }
+      else{
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+            "Password does not match",
+            style: TextStyle(
+                fontSize: 14, color: Colors.white, fontFamily: "Poppins"),
+          ),
+          backgroundColor: blue,
+        ));
+      }
     } catch (e) {
       setState(() {
         loader = false;
@@ -82,6 +92,17 @@ class _SignupState extends State<Signup> {
               ));
     }
   }
+
+
+  // @override
+  // void dispose() {
+  //   emailController.dispose();
+  //   nameController.dispose();
+  //   mobileController.dispose();
+  //   passwordController.dispose();
+  //   confirmPasswordController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
